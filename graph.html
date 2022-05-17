@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Graph Editor</title>
+    <link rel="stylesheet" href="graph.css">
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script type="text/javascript" src="graph.js"></script>
+  </head>
+  <body>
+    <h1>Editare</h1>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <h2>Nod</h2>
+            <table>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td><label for="node-id">Cheie</label></td>
+                  <td><input id="node-id" type="text" value="" /></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><label for="node-label">Valoare</label></td>
+                  <td><input id="node-label" type="text" value="" /></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Actiune</td>
+                  <td>
+                    <button id="node-add" onclick="addNode();">Adauga</button>
+                    <button id="node-update" onclick="updateNode();">Modifica</button>
+                    <button id="node-remove" onclick="removeNode();">Sterge</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <h2>Muchie</h2>
+            <table>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td><label for="edge-id">Cheie</label></td>
+                  <td><input id="edge-id" type="text" value="" /></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><label for="edge-label">Valoare</label></td>
+                  <td><input id="edge-label" type="text" value="" /></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><label for="edge-from">De la</label></td>
+                  <td><input id="edge-from" type="text" value="" /></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><label for="edge-to">Pana la</label></td>
+                  <td><input id="edge-to" type="text" value="" /></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Actiune</td>
+                  <td>
+                    <button id="edge-add" onclick="addEdge();">Adauga</button>
+                    <button id="edge-update" onclick="updateEdge();">Modifica</button>
+                    <button id="edge-remove" onclick="removeEdge();">Sterge</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h1>Vizualizare date</h1>
+    <table class="view">
+      <colgroup>
+        <col width="60%" />
+        <col width="20%" />
+        <col width="20%" />
+      </colgroup>
+      <tbody>
+        <tr>
+
+          <td>
+            <h2>Retea</h2>
+    
+            <div id="retea"></div>
+          </td>
+
+          <td>
+            <h2>Noduri</h2>
+            <pre id="noduri"></pre>
+          </td>
+    
+          <td>
+            <h2>Muchii</h2>
+            <pre id="muchii"></pre>
+          </td>
+    
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
