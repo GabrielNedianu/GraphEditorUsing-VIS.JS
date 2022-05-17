@@ -14,6 +14,8 @@ function addNode() {
   } catch (err) {
     alert(err);
   }
+  document.getElementById("node-id").value = "",
+  document.getElementById("node-label").value = ""
 }
 
 function updateNode() {
@@ -25,6 +27,8 @@ function updateNode() {
   } catch (err) {
     alert(err);
   }
+  document.getElementById("node-id").value = "",
+  document.getElementById("node-label").value = ""
 }
 function removeNode() {
   try {
@@ -32,6 +36,8 @@ function removeNode() {
   } catch (err) {
     alert(err);
   }
+  document.getElementById("node-id").value = "",
+  document.getElementById("node-label").value = ""
 }
 
 function addEdge() {
@@ -45,6 +51,10 @@ function addEdge() {
   } catch (err) {
     alert(err);
   }
+  document.getElementById("edge-id").value = "",
+  document.getElementById("edge-label").value = "",
+  document.getElementById("edge-from").value = "",
+  document.getElementById("edge-to").value = ""
 }
 function updateEdge() {
   try {
@@ -57,6 +67,10 @@ function updateEdge() {
   } catch (err) {
     alert(err);
   }
+  document.getElementById("edge-id").value = "",
+  document.getElementById("edge-label").value = "",
+  document.getElementById("edge-from").value = "",
+  document.getElementById("edge-to").value = ""
 }
 function removeEdge() {
   try {
@@ -64,10 +78,14 @@ function removeEdge() {
   } catch (err) {
     alert(err);
   }
+  document.getElementById("edge-id").value = "",
+  document.getElementById("edge-label").value = "",
+  document.getElementById("edge-from").value = "",
+  document.getElementById("edge-to").value = ""
 }
 
 function draw() {
-  // create an array with nodes
+  // se creaza nodurile
   nodes = new vis.DataSet();
   nodes.on("*", function () {
     document.getElementById("noduri").innerText = JSON.stringify(
@@ -77,14 +95,13 @@ function draw() {
     );
   });
   nodes.add([
-    { id: "1", label: "Nod 1" },
-    { id: "2", label: "Nod 2" },
-    { id: "3", label: "Nod 3" },
-    { id: "4", label: "Nod 4" },
-    { id: "5", label: "Nod 5" }
+    { id: "1", label: "Matei" },
+    { id: "2", label: "Andrei" },
+    { id: "3", label: "Nicoleta" },
+    { id: "4", label: "Ionela" }
   ]);
 
-  // create an array with edges
+  // se adauga muchiile intre noduri
   edges = new vis.DataSet();
   edges.on("*", function () {
     document.getElementById("muchii").innerText = JSON.stringify(
@@ -94,13 +111,13 @@ function draw() {
     );
   });
   edges.add([
-    { id: "1", label: "muchia 1", from: "1", to: "2" },
-    { id: "2", label: "muchia 2", from: "1", to: "3" },
-    { id: "3", label: "muchia 3", from: "2", to: "4" },
-    { id: "4", label: "muchia 4", from: "2", to: "5" }
+    { id: "1", label: "prieteni", from: "1", to: "2" },
+    { id: "2", label: "prieteni buni", from: "1", to: "3" },
+    { id: "3", label: "amici", from: "2", to: "4" },
+    { id: "4", label: "dusmani", from: "2", to: "3" }
   ]);
 
-  // create a network
+  // se creaza reteaua
   var container = document.getElementById("retea");
   var data = {
     nodes: nodes,
